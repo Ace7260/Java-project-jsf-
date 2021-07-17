@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+  <head>
+  	<meta  http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+
+  <body>
+  <center><h2><h:outputText value="Student List"/></h2></center>
+  <h:form>
+  <a4j:commandButton action="start" value="ACCUEIL" />
+	  <h:panelGrid columns="1" style="margin-left:auto;margin-right:auto;">
+	  
+		  <rich:dataTable value="#{stud.studentsListFromDB}" var="st" id="tabstud">
+		  
+		  <rich:column>
+		  		
+		  		<f:facet name="header">Id</f:facet>
+		  		<h:outputText value="#{st.id}" />
+		  		
+		  	</rich:column>
+		  
+		  	<rich:column>
+		  		
+		  		<f:facet name="header">Nom</f:facet>
+		  		<h:outputText value="#{st.name}" />
+		  		
+		  	</rich:column>
+		  	
+		  	<rich:column>
+		  		
+		  		<f:facet name="header">Prénom</f:facet>
+		  		<h:outputText value="#{st.surname}" />
+		  		
+		  	</rich:column>
+		  	
+		  	<rich:column>
+		  		
+		  		<f:facet name="header">Email</f:facet>
+		  		<h:outputText value="#{st.email}" />
+		  		
+		  	</rich:column>
+		  	
+		  	<rich:column>
+		  		
+		  		<f:facet name="header">Date</f:facet>
+		  		<h:outputText value="#{st.date}" />
+		  		
+		  	</rich:column>
+		  	
+		  	<rich:column>
+		  		
+		  		<f:facet name="header">Numero-Téléphone</f:facet>
+		  		<h:outputText value="#{st.number}" />
+		  		
+		  	</rich:column>
+		  	
+		  	<rich:column>
+		  		
+		  		<f:facet name="header">Mot de passe</f:facet>
+		  		<h:outputText value="#{st.password}" />
+		  		
+		  	</rich:column>
+		  	
+		  	<rich:column>
+		  		
+		  		<f:facet name="header">Type du compteur</f:facet>
+		  		<h:outputText value="#{st.typeCompteur}" />
+		  		
+		  	</rich:column>
+		  	
+		  	<rich:column>
+		  		
+		  		<f:facet name="header">Sexe</f:facet>
+		  		<h:outputText value="#{st.gender}" />
+		  		
+		  	</rich:column>
+		  	
+		  	<rich:column>
+		  		
+		  		<f:facet name="header">Addresse</f:facet>
+		  		<h:outputText value="#{st.address}" />
+		  		
+		  	</rich:column>
+		  	
+		  	<rich:column>
+		  		
+			  		<f:facet name="header">Modifier</f:facet>
+			  		
+			  		<a4j:commandButton action="#{stud.updateCustomerDB}" value="Modifier" data="#{stud.info}" oncomplete="alert(data)"/>
+		  		
+		  	</rich:column>
+		  	
+		  	<rich:column>
+		  		
+			  		<f:facet name="header">Supprimer</f:facet>
+			  		
+			  		<a4j:commandButton action="#{stud.deleteCustomerDB}" value="Supprimer" data="#{stud.info}" oncomplete="alert(data)" reRender="tabstud" />
+		  		
+		  	</rich:column>
+		  
+		  </rich:dataTable>
+		  
+		  <h:panelGrid columns="1" style="margin-left:auto;margin-right:auto;">
+		  
+		  <h:commandButton action="Save" value="Enregistrement" />
+		  
+		  </h:panelGrid>
+	  
+	  </h:panelGrid>
+	  
+	</h:form>
+  
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+  <head>
+  	<meta  http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+
+  <body style="background-color:#282828">
+  
+  <center><h2><h:outputText value="Edit Student"/></h2></center>
+  
+  <rich:panel style="background-color:#282828;border-color:red">
+  
+  	  <h:form>
+  	  <a4j:commandButton action="startS" value="ACCUEIL" style="COLOR: #ff0000; BACKGROUND-COLOR: #000000;"/>
+  	  	  <h:panelGrid columns="1">
+  	  	  
+			  <h:outputText value="Student-Name :" style="COLOR: #ffffff;"/>
+			  <h:inputText value="#{Editstud.name}" style="BACKGROUND-COLOR: #282828; COLOR: #ffffff;border-color:black"/>
+			  
+			  <h:outputText value="Student-email :" style="COLOR: #ffffff;"/>
+			  <h:inputText value="#{Editstud.email}" style="BACKGROUND-COLOR: #282828; COLOR: #ffffff;border-color:black"/>
+			  
+			  <h:outputText value="Student-Password :" style="COLOR: #ffffff;"/>
+			  <h:inputSecret value="#{Editstud.password}" style="BACKGROUND-COLOR: #282828; COLOR: #ffffff;border-color:black"/>
+			  
+			  <h:outputText value="Student-Gender :" style="COLOR: #ffffff;"/>
+			  <h:inputText value="#{Editstud.gender}" style="BACKGROUND-COLOR: #282828; COLOR: #ffffff;border-color:black"/>
+			  
+			  <h:outputText value="Student-Addresse" style="COLOR: #ffffff;"/>
+			  <h:inputText value="#{Editstud.address}" style="BACKGROUND-COLOR: #282828; COLOR: #ffffff;border-color:black"/>
+			  
+			  <a4j:commandButton action="#{Editstud.creer_New_Student}" value="Update" data="#{stud.info}" oncomplete="alert(data)" style="BACKGROUND-COLOR: #282828; COLOR: #ffffff;border-color:red"/>
+  	  	  </h:panelGrid>
+  	  	  
+  	  </h:form>
+  	  
+  </rich:panel>
+  
+  </body>
+</html>

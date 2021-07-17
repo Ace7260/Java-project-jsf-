@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+  <head>
+  	<meta  http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+
+  <body style="background-color:#282828">
+  
+  <center><h2><h:outputText value="Create Student"/></h2></center>
+  
+  <rich:panel style="background-color:#282828;border-color:#282828">
+  
+  	  <h:form>
+  	  <a4j:commandButton action="startS" value="ACCUEIL" style="COLOR: #ff0000; BACKGROUND-COLOR: #000000;"/>
+  	  
+  	  	  <h:panelGrid columns="1">
+  	  	  
+			  <h:outputText value="Nom :" style="COLOR: #ffffff;"/>
+			  <h:inputText value="#{stud.name}" style="BACKGROUND-COLOR: #282828; COLOR: #ffffff;border-color:black"/>
+			  
+			  <h:outputText value="Prénom :" style="COLOR: #ffffff;"/>
+			  <h:inputText value="#{stud.name}" style="BACKGROUND-COLOR: #282828; COLOR: #ffffff;border-color:black"/>
+			  
+			  <h:outputText value="Email :" style="COLOR: #ffffff;"/>
+			  <h:inputText value="#{stud.email}" style="BACKGROUND-COLOR: #282828; COLOR: #ffffff;border-color:black"/>
+			  
+			  
+			  <h:outputText value="Date :"  style="COLOR: #ffffff;"/>
+			  <rich:calendar buttonClass="#{a4jSkin.baseSkin}" id="date" value="#{stud.date}">
+			  	  <a4j:support event="ondateselected" reRender="mainTable"/>
+			  </rich:calendar>
+			  
+			  <h:outputText value="Numero-Téléphone :" style="COLOR: #ffffff;"/>
+			  <h:inputText value="#{stud.name}" style="BACKGROUND-COLOR: #282828; COLOR: #ffffff;border-color:black"/>
+			  
+			  <h:outputText value="Mot de passe:" style="COLOR: #ffffff;"/>
+			  <h:inputSecret value="#{stud.password}" style="BACKGROUND-COLOR: #282828; COLOR: #ffffff;border-color:black"/>
+			  
+			   <h:outputText value="Type du compteur :" style="COLOR: #ffffff;"/>
+			  <h:inputText value="#{stud.typeCompteur}" style="BACKGROUND-COLOR: #282828; COLOR: #ffffff;border-color:black"/>
+			  
+			  <h:outputText value="Sexe :" style="COLOR: #ffffff;"/>
+			  <h:selectOneMenu value="#{stud.gender}" style=" width : 144px;">
+			  <f:selectItem itemValue=""/>
+			  <f:selectItem itemValue="M"/>
+			  <f:selectItem itemValue="F"/>
+			  </h:selectOneMenu>
+			  <h:outputText value="Addresse" style="COLOR: #ffffff;"/>
+			  <h:inputText value="#{stud.address}" style="BACKGROUND-COLOR: #282828; COLOR: #ffffff;border-color:black"/>
+			  
+			  <h:panelGrid columns="2">
+			  
+			  <a4j:commandButton action="#{stud.creer_new_Customer}" value="Sauvegarder" data="#{stud.info}" oncomplete="alert(data)" style="BACKGROUND-COLOR: #ff0000;"/>
+			  
+			  <a4j:commandButton action="ListeS" value="Afficher les enregistrements" style="BACKGROUND-COLOR: #282828; COLOR: #ffffff;border-color:black"/>
+			  
+			  </h:panelGrid>
+  	  	  
+  	  	  </h:panelGrid>
+  	  	  
+  	  </h:form>
+  	  
+  </rich:panel>
+  
+  
+  </body>
+</html>

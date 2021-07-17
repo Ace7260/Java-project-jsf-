@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+  <head>
+    <meta  http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+
+  <body>
+  <h:form style="text-align:right">
+  <a4j:commandButton action="startS" value="Dark-Mode" style="COLOR: #ffffff; BACKGROUND-COLOR: #000000;"/>
+  </h:form>
+  <div style="text-align: center">
+  <h:graphicImage value="/Composant/PowerLogo.png" style="height:150px;width:150"/>
+  	<p style="font-size: 50px">CASH POWER <span style="color: red">MANAGEMENT</span></p>
+  	<h:form>
+  	<a4j:commandButton action="Save" value="Commencer" data="Bienvenu sur STUDGEST" oncomplete="alert(data)"/>
+  	</h:form>
+  </div>
+  </body>
+</html>

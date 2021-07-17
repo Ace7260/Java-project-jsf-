@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+  <head>
+  	<meta  http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+
+  <body>
+  
+  <center><h2><h:outputText value="Enregistrement"/></h2></center>
+  
+  <rich:panel>
+  
+  	  <h:form>
+  	  <a4j:commandButton action="start" value="ACCUEIL" />
+  	  
+  	  	  <h:panelGrid columns="1">
+  	  	  
+			  <h:outputText value="Nom :" />
+			  <h:inputText value="#{stud.name}"/>
+			  
+			  <h:outputText value="Prénom :" />
+			  <h:inputText value="#{stud.surname}"/>
+			  
+			  <h:outputText value="Email :" />
+			  <h:inputText value="#{stud.email}"/>
+			  
+			  <h:outputText value="Date :" />
+			  <rich:calendar buttonClass="#{a4jSkin.baseSkin}" id="date" value="#{stud.date}">
+			  	  <a4j:support event="ondateselected" reRender="mainTable"/>
+			  </rich:calendar>
+			  
+			  <h:outputText value="Numero-Téléphone :" />
+			  <h:inputText value="#{stud.number}"/>
+			  
+			  <h:outputText value="Mot de passe :" />
+			  <h:inputSecret value="#{stud.password}"/>
+			  
+			  <h:outputText value="Type du compteur :" />
+			  <h:inputText value="#{stud.typeCompteur}"/>
+			  
+			  <h:outputText value="Sexe :" />
+			  <h:selectOneMenu value="#{stud.gender}" style=" width : 144px;">
+			  <f:selectItem itemValue=""/>
+			  <f:selectItem itemValue="M"/>
+			  <f:selectItem itemValue="F"/>
+			  </h:selectOneMenu>
+			  
+			  <h:outputText value="Addresse" />
+			  <h:inputText value="#{stud.address}"/>
+			  
+			  <h:panelGrid columns="2">
+			  
+			  <a4j:commandButton action="#{stud.creer_new_Customer}" value="Sauvegarder" data="#{stud.info}" oncomplete="alert(data)"/>
+			  
+			  <a4j:commandButton action="Liste" value="Afficher les enregistrements" />
+			  
+			  </h:panelGrid>
+  	  	  
+  	  	  </h:panelGrid>
+  	  	  
+  	  </h:form>
+  	  
+  </rich:panel>
+  
+  </body>
+</html>

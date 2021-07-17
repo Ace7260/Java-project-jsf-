@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+  <head>
+  	<meta  http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+
+  <body style="background-color:#282828">
+  <center><h2><h:outputText value="Student List"/></h2></center>
+  <h:form>
+  <a4j:commandButton action="startS" value="ACCUEIL" style="BACKGROUND-COLOR: #ff0000;"/>
+	  <h:panelGrid columns="1" style="margin-left:auto;margin-right:auto;">
+	  
+		  <rich:dataTable value="#{stud.studentsListFromDB}" var="st" id="tabstud" style="BACKGROUND-COLOR: #282828;border-color:black">
+		  
+		  <rich:column >
+		  		
+		  		<f:facet name="header">Id</f:facet>
+		  		<h:outputText value="#{st.id}" style=" COLOR: #ffffff;"/>
+		  		
+		  	</rich:column>
+		  
+		  	<rich:column>
+		  		
+		  		<f:facet name="header">Nom</f:facet>
+		  		<h:outputText value="#{st.name}" style=" COLOR: #ffffff;"/>
+		  		
+		  	</rich:column>
+		  	
+		  	<rich:column>
+		  		
+		  		<f:facet name="header">Prénom</f:facet>
+		  		<h:outputText value="#{st.surname}" style=" COLOR: #ffffff;"/>
+		  		
+		  	</rich:column>
+		  	
+		  	<rich:column>
+		  		
+		  		<f:facet name="header">Email</f:facet>
+		  		<h:outputText value="#{st.email}" style=" COLOR: #ffffff;"/>
+		  		
+		  	</rich:column>
+		  	
+		  	<rich:column>
+		  		
+		  		<f:facet name="header">Date</f:facet>
+		  		<h:outputText value="#{st.date}" style=" COLOR: #ffffff;"/>
+		  		
+		  	</rich:column>
+		  	
+		  	<rich:column>
+		  		
+		  		<f:facet name="header">Numero-Téléphone</f:facet>
+		  		<h:outputText value="#{st.email}" style=" COLOR: #ffffff;"/>
+		  		
+		  	</rich:column>
+		  	
+		  	<rich:column>
+		  		
+		  		<f:facet name="header">Mot de passe</f:facet>
+		  		<h:outputText value="#{st.password}" style=" COLOR: #ffffff;"/>
+		  		
+		  	</rich:column>
+		  	
+		  	<rich:column>
+		  		
+		  		<f:facet name="header">Type du compteur</f:facet>
+		  		<h:outputText value="#{st.typeCompteur}" style=" COLOR: #ffffff;"/>
+		  		
+		  	</rich:column>
+		  	
+		  	<rich:column>
+		  		
+		  		<f:facet name="header">Sexe</f:facet>
+		  		<h:outputText value="#{st.gender}" style=" COLOR: #ffffff;"/>
+		  		
+		  	</rich:column>
+		  	
+		  	<rich:column>
+		  		
+		  		<f:facet name="header">Addresse</f:facet>
+		  		<h:outputText value="#{st.address}" style=" COLOR: #ffffff;"/>
+		  		
+		  	</rich:column>
+		  	
+		  	<rich:column>
+		  		
+			  		<f:facet name="header">Modifier</f:facet>
+			  		
+			  		<a4j:commandButton action="#{stud.updateCustomerDB}" value="Modifier" data="#{stud.info}" oncomplete="alert(data)" style="BACKGROUND-COLOR: #ff0000;"/>
+		  		
+		  	</rich:column>
+		  	
+		  	<rich:column>
+		  		
+			  		<f:facet name="header">Supprimer</f:facet>
+			  		
+			  		<a4j:commandButton action="#{stud.deleteCustomerDB}" value="Supprimer" data="#{stud.info}" oncomplete="alert(data)" reRender="tabstud" style="COLOR: #ffffff; BACKGROUND-COLOR: #000000;"/>
+		  		
+		  	</rich:column>
+		  
+		  </rich:dataTable>
+		  
+		  <h:panelGrid columns="1" style="margin-left:auto;margin-right:auto;">
+		  
+		  <h:commandButton action="SaveS" value="Enregistrement" style="BACKGROUND-COLOR: #282828; COLOR: #ffffff;border-color:black"/>
+		  
+		  </h:panelGrid>
+	  
+	  </h:panelGrid>
+	  
+	</h:form>
+  
+  </body>
+</html>
